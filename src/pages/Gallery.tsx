@@ -1,99 +1,30 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Palette, Code, Smartphone, ShoppingCart, Utensils, Scissors, Building2, ArrowLeft } from 'lucide-react';
+import { ExternalLink, Code, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const Gallery = () => {
   const categories = [
     {
-      title: "E-Commerce",
-      description: "Advanced and responsive online stores",
-      icon: <ShoppingCart className="w-8 h-8" />,
+      title: "Portfolio",
+      description: "Professional portfolio websites and creative showcases",
+      icon: <Code className="w-8 h-8" />,
       color: "from-blue-500 to-purple-500",
       projects: [
         {
-          title: "Modern Fashion Store",
-          image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Online store for women's fashion"
+          title: "Video Editor Portfolio",
+          image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          description: "Professional video editor portfolio showcasing creative work"
         },
         {
-          title: "Electronics Store",
+          title: "Front-end Developer Portfolio",
           image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Platform for selling electronic devices"
+          description: "Professional front-end developer portfolio showcasing web development skills"
         },
         {
-          title: "Gift Store",
-          image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Specialized store for premium gifts"
-        }
-      ]
-    },
-    {
-      title: "Restaurants & Hospitality",
-      description: "Professional restaurant and café websites",
-      icon: <Utensils className="w-8 h-8" />,
-      color: "from-orange-500 to-red-500",
-      projects: [
-        {
-          title: "Mediterranean Restaurant",
-          image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Luxury seafood restaurant"
-        },
-        {
-          title: "Art Café",
-          image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Modern café for artists and creators"
-        },
-        {
-          title: "Heritage Restaurant",
-          image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Authentic traditional cuisine restaurant"
-        }
-      ]
-    },
-    {
-      title: "Beauty Services",
-      description: "Distinguished salons and beauty centers",
-      icon: <Scissors className="w-8 h-8" />,
-      color: "from-pink-500 to-purple-500",
-      projects: [
-        {
-          title: "Royal Beauty Salon",
-          image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Luxury women's beauty salon"
-        },
-        {
-          title: "Skin Care Center",
-          image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Specialized center for skin treatments"
-        },
-        {
-          title: "Modern Men's Salon",
-          image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Advanced men's barbershop"
-        }
-      ]
-    },
-    {
-      title: "Professional Services",
-      description: "Company websites and professional services",
-      icon: <Building2 className="w-8 h-8" />,
-      color: "from-green-500 to-teal-500",
-      projects: [
-        {
-          title: "Legal Consulting Company",
-          image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Law office and legal consulting"
-        },
-        {
-          title: "Digital Marketing Company",
-          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Digital marketing agency"
-        },
-        {
-          title: "Accounting Company",
-          image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          description: "Accounting and financial auditing office"
+          title: "The Founder Playbook",
+          image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          description: "Documenting the journey of building real businesses from scratch"
         }
       ]
     }
@@ -138,11 +69,11 @@ const Gallery = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Our Portfolio of
-              <span className="block text-orange-500">Excellence</span>
+              Our Portfolio
+              <span className="block text-orange-500">Showcase</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Discover a diverse collection of successful projects we've implemented for our clients across various sectors
+              Discover a collection of professional portfolio websites we've created for creative professionals
             </p>
           </motion.div>
         </div>
@@ -168,7 +99,7 @@ const Gallery = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {category.projects.map((project, projectIndex) => (
-                <Link to="/project-not-found" key={projectIndex}>
+                <Link to={project.title === "Video Editor Portfolio" ? "https://mockup1.digipluslab.xyz" : project.title === "Front-end Developer Portfolio" ? "https://mockup2.digipluslab.xyz" : project.title === "The Founder Playbook" ? "https://www.thefounderplaybook.xyz" : "/project-not-found"} key={projectIndex} target={project.title === "Video Editor Portfolio" || project.title === "Front-end Developer Portfolio" || project.title === "The Founder Playbook" ? "_blank" : "_self"}>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -218,16 +149,16 @@ const Gallery = () => {
             viewport={{ once: true }}
           >
             <h3 className="text-4xl font-bold text-white mb-6">
-              Do you want a project like these?
+              Do you want a portfolio like these?
             </h3>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Start your project now and get a professional website that sets you apart from competitors
+              Start your portfolio project now and get a professional website that showcases your work beautifully
             </p>
             <Link to="/#contact">
               <Button
                 className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg font-semibold rounded-lg"
               >
-                Start Your Project Now
+                Start Your Portfolio Project Now
               </Button>
             </Link>
           </motion.div>

@@ -1,38 +1,30 @@
-
 import { motion } from 'framer-motion';
-import { ExternalLink, Palette, Code, Smartphone } from 'lucide-react';
+import { ExternalLink, Palette, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 export const Gallery = () => {
   const projects = [
     {
-      title: "E-Commerce Store",
-      category: "E-Commerce",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      icon: <Smartphone className="w-6 h-6" />,
+      title: "Video Editor Portfolio",
+      category: "Portfolio",
+      image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      icon: <Code className="w-6 h-6" />,
       color: "from-blue-500 to-purple-500"
     },
     {
-      title: "Restaurant Website",
-      category: "Restaurants & Hospitality",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "Front-end Developer Portfolio",
+      category: "Portfolio",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <Palette className="w-6 h-6" />,
       color: "from-orange-500 to-red-500"
     },
     {
-      title: "Beauty Salon",
-      category: "Beauty Services",
-      image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      icon: <Code className="w-6 h-6" />,
-      color: "from-pink-500 to-purple-500"
-    },
-    {
-      title: "Service Company",
-      category: "Professional Services",
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "The Founder Playbook",
+      category: "Portfolio",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       icon: <ExternalLink className="w-6 h-6" />,
-      color: "from-green-500 to-teal-500"
+      color: "from-pink-500 to-purple-500"
     }
   ];
 
@@ -50,13 +42,13 @@ export const Gallery = () => {
             Our Portfolio
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Browse a collection of the best websites we've developed for our clients across various fields
+            Browse a collection of the best portfolio websites we've developed for our clients
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <Link to="/project-not-found" key={index}>
+            <Link to={project.title === "Video Editor Portfolio" ? "https://mockup1.digipluslab.xyz" : project.title === "Front-end Developer Portfolio" ? "https://mockup2.digipluslab.xyz" : project.title === "The Founder Playbook" ? "https://www.thefounderplaybook.xyz" : "/project-not-found"} key={index} target={project.title === "Video Editor Portfolio" || project.title === "Front-end Developer Portfolio" || project.title === "The Founder Playbook" ? "_blank" : "_self"}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +96,7 @@ export const Gallery = () => {
           </Link>
           
           <p className="text-lg text-gray-400">
-            And more than 100+ successful projects waiting for you to explore
+            And more portfolio projects waiting for you to explore
           </p>
         </motion.div>
       </div>

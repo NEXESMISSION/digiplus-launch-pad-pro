@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilesh Kharat | Video Editor Portfolio</title>
+    <meta name="description" content="I'm a freelance video editor with a focus on clean, engaging storytelling. From reels and promos to cinematic edits, I help brands and creators bring their vision to life. Skilled in Premiere Pro, After Effects, and Capcut.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Pre-connects for quicker YouTube handshakes -->
+    <link rel="preconnect" href="https://www.youtube.com">
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://i.ytimg.com">
+    <!-- Async YouTube Iframe API (lightweight until first player instantiation) -->
+    <script async src="https://www.youtube.com/iframe_api"></script>
+    <style>
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --accent-bg: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-feature-settings: 'cv11', 'ss01';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            min-height: 100vh;
+            background: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+        }
+
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            background: var(--secondary-bg);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-image, .profile-fallback {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .profile-image:hover, .profile-fallback:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .profile-fallback {
+            display: none;
+            background: var(--gradient-primary);
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-subtitle {
+            font-size: 1.125rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .info-item svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        .profile-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Tools Section */
+        .tools-section {
+            margin-bottom: 2rem;
+        }
+
+        .tools-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .tool-item {
+            background: var(--accent-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tool-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tool-item img {
+            width: 2rem;
+            height: 2rem;
+            object-fit: contain;
+        }
+
+        .tool-item span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .social-link svg, .social-link img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        /* Work Section */
+        .work-section {
+            background: var(--secondary-bg);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .work-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Category Buttons with Format Options */
+        .category-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .category-btn {
+            background: var(--accent-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .category-btn:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--accent-color);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+
+        .category-btn.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Video Container Styles */
+        .video-container {
+            background: linear-gradient(135deg, var(--accent-bg) 0%, var(--secondary-bg) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            aspect-ratio: 9/16;
+            min-height: 400px;
+        }
+
+        .category-label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            z-index: 5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .video-item:hover .category-label {
+            background: var(--accent-color);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .video-container img,
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-item:hover .video-container img {
+            transform: scale(1.05);
+        }
+
+        /* Enhanced Work Grid with Video Items */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            grid-auto-flow: row dense;
+        }
+
+        .video-item {
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 1;
+            transform: translateY(0);
+            background: var(--accent-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        .video-item.hidden {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.3s ease-out;
+            pointer-events: none;
+        }
+
+        .video-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-color);
+        }
+
+        /* Modernised play button */
+        .play-button {
+            position: absolute;
+            color: #ffffff;
+            width: 4rem;
+            height: 4rem;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.18);
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .play-button svg {
+            width: 1.8rem;
+            height: 1.8rem;
+            stroke: none;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover .play-button {
+            background: var(--accent-color);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+            transform: scale(1.15);
+        }
+
+        .video-item:hover .play-button svg {
+            transform: scale(1.05);
+        }
+
+        /* Unified animation */
+        .video-item.filtering-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .work-grid.loading {
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .work-grid.loaded {
+            opacity: 1;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 640px) {
+            .main-content {
+                padding: 1rem;
+                gap: 2rem;
+            }
+
+            .profile-section, .work-section {
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+
+            .profile-name {
+                font-size: 2rem;
+            }
+
+            .work-title {
+                font-size: 2rem;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .video-container {
+                min-height: 320px;
+            }
+            
+            .category-label {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+                top: 10px;
+                left: 10px;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item {
+                justify-content: flex-start;
+            }
+
+            .profile-description {
+                text-align: left;
+            }
+
+            /* Extra top padding for profile image on small screens */
+            .profile-image-container {
+                margin-top: 1.5rem;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .work-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.25rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .main-content {
+                grid-template-columns: 400px 1fr;
+                gap: 3rem;
+                padding: 3rem 2rem;
+                align-items: start;
+            }
+
+            .profile-header {
+                text-align: left;
+                align-items: flex-start;
+            }
+
+            .profile-name {
+                font-size: 2.75rem;
+            }
+
+            .profile-description {
+                text-align: left;
+            }
+
+            .tools-title {
+                text-align: left;
+            }
+
+            .social-links {
+                justify-content: flex-start;
+            }
+
+            .category-buttons {
+                justify-content: flex-start;
+            }
+
+            .work-title {
+                text-align: left;
+                font-size: 2.75rem;
+            }
+
+            .work-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .info-item {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .work-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .work-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .main-content {
+                padding: 4rem 2rem;
+            }
+        }
+
+        /* Video Modal Styles */
+        .video-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .video-modal.active {
+            display: flex;
+        }
+
+        /* Close button sits just outside the video frame */
+        .close-btn {
+            position: absolute;
+            top: -16px; /* outside corner */
+            right: -16px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 0, 0, 0.7);
+            border-color: rgba(255, 0, 0, 0.7);
+        }
+
+        .video-modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            background: var(--secondary-bg);
+            border-radius: 16px;
+            overflow: visible; /* allow close button to sit outside */
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+        }
+
+        .video-modal video {
+            width: auto;
+            height: 80vh;
+            max-width: 100%;
+            aspect-ratio: 9/16;
+            object-fit: contain;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-modal-content:hover .video-controls {
+            opacity: 1;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-color);
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .volume-slider {
+            width: 80px;
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .volume-fill {
+            height: 100%;
+            background: var(--accent-color);
+            border-radius: 3px;
+            width: 100%;
+        }
+
+        .time-display {
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            min-width: 90px;
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(59, 130, 246, 0.3);
+            border-top: 4px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Utility Classes */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus styles for accessibility */
+        .category-btn:focus,
+        .social-link:focus,
+        .tool-item:focus,
+        .video-item:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* Floating ticket */
+        .floating-ticket {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 2000;
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            color: #ffffff;
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            pointer-events: none; /* does not intercept clicks */
+            transform: rotate(-3deg);
+        }
+
+        /* When the YouTube API injects its iframe */
+        #modalPlayer iframe {
+            width: auto;
+            height: 80vh;
+            max-width: 100%;
+            aspect-ratio: 9/16;
+            object-fit: contain;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-image-container">
+                        <img src="Nilesh Kharat _ Video Editor Portfolio_files/003b404c5d9445739d4008824619ba22.png" alt="Nilesh Kharat" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="profile-fallback">NK</div>
+                    </div>
+                    <h1 class="profile-name">Nilesh Kharat</h1>
+                    <p class="profile-subtitle">Video Editor & Creative Storyteller</p>
+                </div>
+                
+                <div class="profile-info">
+                    <div class="info-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>India</span>
+                    </div>
+                    <div class="info-item">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="none" stroke-miterlimit="10" stroke-width="32" d="M464 256c0-114.87-93.13-208-208-208S48 141.13 48 256s93.13 208 208 208 208-93.13 208-208z"></path>
+                            <path d="M445.57 172.14c-16.06.1-14.48 29.73-34.49 15.75-7.43-5.18-12-12.71-21.33-15-8.15-2-16.5.08-24.55 1.47-9.15 1.58-20 2.29-26.94 9.22-6.71 6.67-10.26 15.62-17.4 22.33-13.81 13-19.64 27.19-10.7 45.57 8.6 17.67 26.59 27.26 46 26 19.07-1.27 38.88-12.33 38.33 15.38-.2 9.8 1.85 16.6 4.86 25.71 2.79 8.4 2.6 16.54 3.24 25.21 1.18 16.2 4.16 34.36 12.2 48.67l15-21.16c1.85-2.62 5.72-6.29 6.64-9.38 1.63-5.47-1.58-14.87-1.95-21s-.19-12.34-1.13-18.47c-1.32-8.59-6.4-16.64-7.1-25.13-1.29-15.81 1.6-28.43-10.58-41.65-11.76-12.75-29-15.81-45.47-13.22-8.3 1.3-41.71 6.64-28.3-12.33 2.65-3.73 7.28-6.79 10.26-10.34 2.59-3.09 4.84-8.77 7.88-11.18s17-5.18 21-3.95 8.17 7 11.64 9.56a49.89 49.89 0 0 0 21.81 9.36c13.66 2 42.22-5.94 42-23.46-.04-8.4-7.84-20.1-10.92-27.96z"></path>
+                        </svg>
+                        <span>English, Hindi, Marathi</span>
+                    </div>
+                </div>
+                
+                <p class="profile-description">I'm a freelance video editor with a focus on clean, engaging storytelling. From reels and promos to cinematic edits, I help brands and creators bring their vision to life. Skilled in Premiere Pro, After Effects, and Capcut.</p>
+                
+                <div class="tools-section">
+                    <h2 class="tools-title">Editing Tools</h2>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <img src="Nilesh Kharat _ Video Editor Portfolio_files/pr_logo.png" alt="Premiere Pro" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                            <span class="tool-fallback">🎬</span>
+                            <span>Adobe Premiere Pro</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="Nilesh Kharat _ Video Editor Portfolio_files/ae_logo.png" alt="After Effects" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                            <span class="tool-fallback">✨</span>
+                            <span>Adobe After Effects</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="Nilesh Kharat _ Video Editor Portfolio_files/cc_logo.png" alt="CapCut" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                            <span class="tool-fallback">✂️</span>
+                            <span>CapCut</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <button class="social-link" aria-label="Email" onclick="window.location.href='mailto:contact@nileshkharat.com'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                    </button>
+                    <a href="https://www.instagram.com/x__zaynx__________x" target="_blank" class="social-link" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <button class="social-link" aria-label="Discord" onclick="window.open('https://discord.com', '_blank')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0189 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="work-section">
+                <h1 class="work-title">My Work</h1>
+                
+                <!-- Category Buttons with Format Options -->
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="commercial">Commercial</button>
+                    <button class="category-btn" data-category="social">Social Media</button>
+                    <button class="category-btn" data-category="cinematic">Cinematic</button>
+                    <button class="category-btn" data-category="promotional">Promotional</button>
+                </div>
+                
+                <!-- Enhanced Work Grid with Video Items -->
+                <div class="work-grid">
+                    <!-- Commercial Video - Vertical -->
+                    <div class="video-item" data-category="commercial" data-video="https://www.youtube.com/shorts/IP1_7tpeT_4">
+                        <div class="video-container">
+                            <div class="category-label">Commercial</div>
+                            <div class="loading-placeholder"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="play-button">
+                                <polygon points="8 5 8 19 19 12"></polygon>
+                            </svg>
+                            <img src="Nilesh Kharat _ Video Editor Portfolio_files/5cb576a70ffd465db29ffb0d7b6330ea_thumbnail.jpg" alt="Commercial Video" class="lazy" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'; this.parentElement.innerHTML += '<div style=\'position: absolute; color: white; font-size: 1.2rem; text-align: center; z-index: 1;\'>Video Thumbnail<br>Not Available</div>';">
+                            <!-- Video preview removed; YouTube Shorts will play in modal -->
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media Video - Portrait -->
+                    <div class="video-item" data-category="social" data-video="https://www.youtube.com/shorts/EsIB7QhCam8">
+                        <div class="video-container">
+                            <div class="category-label">Social Media</div>
+                            <div class="loading-placeholder"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="play-button">
+                                <polygon points="8 5 8 19 19 12"></polygon>
+                            </svg>
+                            <img src="Nilesh Kharat _ Video Editor Portfolio_files/35154456407f400a84b5a5626f105721_thumbnail.png" alt="Social Media Video" class="lazy" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #764ba2 0%, #667eea 100%)'; this.parentElement.innerHTML += '<div style=\'position: absolute; color: white; font-size: 1.2rem; text-align: center; z-index: 1;\'>Video Thumbnail<br>Not Available</div>';">
+                            <!-- Video preview removed; YouTube Shorts will play in modal -->
+                        </div>
+                    </div>
+                    
+                    <!-- Cinematic Video - Vertical -->
+                    <div class="video-item" data-category="cinematic" data-video="https://www.youtube.com/shorts/egMZoRUUrqU">
+                        <div class="video-container">
+                            <div class="category-label">Cinematic</div>
+                            <div class="loading-placeholder"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="play-button">
+                                <polygon points="8 5 8 19 19 12"></polygon>
+                            </svg>
+                            <img src="Nilesh Kharat _ Video Editor Portfolio_files/f4fa212832114f99947d7fd11f2d4b60_thumbnail.jpg" alt="Cinematic Video" class="lazy" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'; this.parentElement.innerHTML += '<div style=\'position: absolute; color: white; font-size: 1.2rem; text-align: center; z-index: 1;\'>Video Thumbnail<br>Not Available</div>';">
+                            <!-- Video preview removed; YouTube Shorts will play in modal -->
+                        </div>
+                    </div>
+                    
+                    <!-- Promotional Video - Portrait -->
+                    <div class="video-item" data-category="promotional" data-video="https://www.youtube.com/shorts/MQawf8Ffpok">
+                        <div class="video-container">
+                            <div class="category-label">Promotional</div>
+                            <div class="loading-placeholder"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="play-button">
+                                <polygon points="8 5 8 19 19 12"></polygon>
+                            </svg>
+                            <img src="Nilesh Kharat _ Video Editor Portfolio_files/0d0b8258a1ec43be84b9c2223993920b_thumbnail.png" alt="Promotional Video" class="lazy" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'; this.parentElement.innerHTML += '<div style=\'position: absolute; color: white; font-size: 1.2rem; text-align: center; z-index: 1;\'>Video Thumbnail<br>Not Available</div>';">
+                            <!-- Video preview removed; YouTube Shorts will play in modal -->
+                        </div>
+                    </div>
+                    
+                    <!-- We've removed videos without thumbnails -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <button class="close-btn" onclick="closeVideoModal()" aria-label="Close video">&times;</button>
+            <video id="modalVideo" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div id="modalPlayer" style="display:none;"></div>
+            <div class="video-controls">
+                <button class="control-btn" onclick="togglePlayPause()" aria-label="Play/Pause">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon points="8 5 8 19 19 12"></polygon>
+                    </svg>
+                </button>
+                <div class="progress-bar" onclick="setProgress(event)">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="time-display">
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                </div>
+                <div class="volume-control">
+                    <button class="control-btn" onclick="toggleMute()" aria-label="Mute/Unmute">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                        </svg>
+                    </button>
+                    <div class="volume-slider" onclick="setVolume(event)">
+                        <div class="volume-fill"></div>
+                    </div>
+                </div>
+                <button class="control-btn" onclick="toggleFullscreen()" aria-label="Fullscreen">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating ticket badge -->
+    <div class="floating-ticket">Made by Digiplus X TFP</div>
+
+    <script>
+        let currentVideo = null;
+        let isPlaying = false;
+
+        // One reusable YouTube player instance for faster loads
+        let ytPlayer = null;
+
+        function openVideoModal(videoSrc) {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            const playerContainer = document.getElementById('modalPlayer');
+
+            const isYouTube = /youtu\.?(be)/.test(videoSrc);
+            const controls = document.querySelector('.video-controls');
+
+            if (isYouTube) {
+                // Extract the YouTube ID (supports shorts, share links, watch?v=)
+                const idMatch = videoSrc.match(/(?:youtu\.be\/|shorts\/|watch\?v=)([\w-]+)/);
+                const videoId = idMatch ? idMatch[1] : null;
+
+                // Hide native video & controls, show player container
+                video.pause();
+                video.src = '';
+                video.style.display = 'none';
+                if (controls) controls.style.display = 'none';
+                playerContainer.style.display = 'block';
+
+                if (videoId) {
+                    if (ytPlayer) {
+                        // Player already exists – just load new id
+                        ytPlayer.loadVideoById(videoId);
+                    } else if (window.YT && YT.Player) {
+                        // Create player on first demand
+                        ytPlayer = new YT.Player('modalPlayer', {
+                            videoId: videoId,
+                            playerVars: { playsinline: 1, autoplay: 1, rel: 0 },
+                        });
+                    } else {
+                        // Fallback if API hasn't loaded yet – basic embed
+                        playerContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen style="border:none;width:auto;height:80vh;max-width:100%;aspect-ratio:9/16;"></iframe>`;
+                    }
+                }
+                isPlaying = false;
+                currentVideo = null;
+            } else {
+                // Local / MP4 path
+                playerContainer.style.display = 'none';
+                if (controls) controls.style.display = 'flex';
+
+                video.src = videoSrc;
+                video.style.display = 'block';
+                video.play();
+                isPlaying = true;
+                currentVideo = video;
+                video.addEventListener('loadedmetadata', updateDuration);
+                video.addEventListener('timeupdate', updateProgress);
+            }
+
+            modal.classList.add('active');
+            document.addEventListener('keydown', handleKeyPress);
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            const playerContainer = document.getElementById('modalPlayer');
+
+            modal.classList.remove('active');
+
+            // Reset local video element
+            video.pause();
+            video.src = '';
+            video.style.display = 'none';
+
+            // Stop YouTube video if player exists
+            if (ytPlayer && ytPlayer.stopVideo) {
+                ytPlayer.stopVideo();
+            }
+            playerContainer.style.display = 'none';
+
+            isPlaying = false;
+            currentVideo = null;
+
+            document.removeEventListener('keydown', handleKeyPress);
+
+            const controls = document.querySelector('.video-controls');
+            if (controls) controls.style.display = 'none';
+        }
+
+        function togglePlayPause() {
+            if (!currentVideo) return;
+            
+            if (isPlaying) {
+                currentVideo.pause();
+                isPlaying = false;
+            } else {
+                currentVideo.play();
+                isPlaying = true;
+            }
+        }
+
+        function setProgress(event) {
+            if (!currentVideo) return;
+            
+            const progressBar = event.currentTarget;
+            const clickX = event.offsetX;
+            const width = progressBar.offsetWidth;
+            const percentage = clickX / width;
+            
+            currentVideo.currentTime = currentVideo.duration * percentage;
+        }
+
+        function updateProgress() {
+            if (!currentVideo) return;
+            
+            const progressFill = document.querySelector('.progress-fill');
+            const currentTime = document.getElementById('currentTime');
+            
+            const percentage = (currentVideo.currentTime / currentVideo.duration) * 100;
+            progressFill.style.width = percentage + '%';
+            
+            currentTime.textContent = formatTime(currentVideo.currentTime);
+        }
+
+        function updateDuration() {
+            if (!currentVideo) return;
+            
+            const duration = document.getElementById('duration');
+            duration.textContent = formatTime(currentVideo.duration);
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function toggleMute() {
+            if (!currentVideo) return;
+            
+            currentVideo.muted = !currentVideo.muted;
+            updateVolumeDisplay();
+        }
+
+        function setVolume(event) {
+            if (!currentVideo) return;
+            
+            const volumeSlider = event.currentTarget;
+            const clickX = event.offsetX;
+            const width = volumeSlider.offsetWidth;
+            const volume = clickX / width;
+            
+            currentVideo.volume = volume;
+            currentVideo.muted = false;
+            updateVolumeDisplay();
+        }
+
+        function updateVolumeDisplay() {
+            if (!currentVideo) return;
+            
+            const volumeFill = document.querySelector('.volume-fill');
+            const volume = currentVideo.muted ? 0 : currentVideo.volume;
+            volumeFill.style.width = (volume * 100) + '%';
+        }
+
+        function toggleFullscreen() {
+            const modalContent = document.querySelector('.video-modal-content');
+            
+            if (!document.fullscreenElement) {
+                modalContent.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (!currentVideo) return;
+            
+            switch(event.code) {
+                case 'Space':
+                    event.preventDefault();
+                    togglePlayPause();
+                    break;
+                case 'Escape':
+                    closeVideoModal();
+                    break;
+                case 'ArrowLeft':
+                    currentVideo.currentTime -= 10;
+                    break;
+                case 'ArrowRight':
+                    currentVideo.currentTime += 10;
+                    break;
+                case 'ArrowUp':
+                    event.preventDefault();
+                    currentVideo.volume = Math.min(1, currentVideo.volume + 0.1);
+                    updateVolumeDisplay();
+                    break;
+                case 'ArrowDown':
+                    event.preventDefault();
+                    currentVideo.volume = Math.max(0, currentVideo.volume - 0.1);
+                    updateVolumeDisplay();
+                    break;
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('videoModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeVideoModal();
+            }
+        });
+
+        // Enhanced category filtering system with smooth animations
+        function filterVideos(category) {
+            // Prevent multiple rapid calls
+            if (window.isFiltering) return;
+            window.isFiltering = true;
+            
+            const videos = document.querySelectorAll('.video-item');
+            const buttons = document.querySelectorAll('.category-btn');
+            const workGrid = document.querySelector('.work-grid');
+            
+            // Add loading state only once
+            workGrid.classList.add('loading');
+            workGrid.classList.remove('loaded');
+            
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            const clickedButton = Array.from(buttons).find(btn => 
+                btn.getAttribute('data-category') === category
+            );
+            if (clickedButton) {
+                clickedButton.classList.add('active');
+            }
+            
+            // First, add filtering-out animation to videos that should be hidden
+            videos.forEach(video => {
+                const videoCategory = video.getAttribute('data-category');
+                const videoFormat = video.getAttribute('data-format');
+                let shouldShow = false;
+                
+                // Determine if video should be shown based on category
+                if (category === 'all') {
+                    shouldShow = true;
+                } else if (category === 'reels') {
+                    shouldShow = videoFormat === 'reel' || videoCategory === 'reels';
+                } else if (category === 'vertical') {
+                    shouldShow = true; // All videos are vertical now
+                } else {
+                    shouldShow = videoCategory === category;
+                }
+                
+                if (!shouldShow && !video.classList.contains('hidden')) {
+                    video.classList.add('filtering-out');
+                    video.classList.remove('filtering-in');
+                }
+            });
+            
+            // After the fade-out animation, hide videos and show others
+            setTimeout(() => {
+                videos.forEach(video => {
+                    const videoCategory = video.getAttribute('data-category');
+                    const videoFormat = video.getAttribute('data-format');
+                    let shouldShow = false;
+                    
+                    // Determine if video should be shown based on category
+                    if (category === 'all') {
+                        shouldShow = true;
+                    } else if (category === 'reels') {
+                        shouldShow = videoFormat === 'reel' || videoCategory === 'reels';
+                    } else if (category === 'vertical') {
+                        shouldShow = true; // All videos are vertical now
+                    } else {
+                        shouldShow = videoCategory === category;
+                    }
+                    
+                    if (shouldShow) {
+                        video.classList.remove('hidden', 'filtering-out');
+                        video.classList.add('filtering-in');
+                        video.style.display = 'block';
+                    } else {
+                        video.classList.add('hidden');
+                        video.classList.remove('filtering-in', 'filtering-out');
+                        video.style.display = 'none';
+                    }
+                });
+                
+                // Remove loading state and add loaded state
+                setTimeout(() => {
+                    workGrid.classList.remove('loading');
+                    workGrid.classList.add('loaded');
+                    // Reset the filtering flag after animations complete
+                    window.isFiltering = false;
+                }, 100);
+                
+            }, 300); // Wait for fade-out animation to complete
+            
+            // Clean up animation classes after animations complete
+            setTimeout(() => {
+                videos.forEach(video => {
+                    video.classList.remove('filtering-in', 'filtering-out');
+                });
+            }, 800);
+        }
+        
+        // Enhanced grid reorganization with staggered animations
+        function reorganizeGridWithAnimation() {
+            const visibleVideos = document.querySelectorAll('.video-item:not(.hidden)');
+            
+            // Add staggered animation to visible videos
+            visibleVideos.forEach((video, index) => {
+                video.style.animationDelay = `${index * 0.1}s`;
+                video.classList.add('filtering-in');
+            });
+            
+            // Clean up after animations
+            setTimeout(() => {
+                visibleVideos.forEach(video => {
+                    video.style.animationDelay = '';
+                    video.classList.remove('filtering-in');
+                });
+            }, 600);
+        }
+        
+        // Initialize category system on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const workGrid = document.querySelector('.work-grid');
+            
+            // Initialize filtering state
+            window.isFiltering = false;
+            
+            // Add initial loaded state
+            setTimeout(() => {
+                workGrid.classList.add('loaded');
+            }, 100);
+            
+            // Set up category button event listeners
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    filterVideos(category);
+                });
+            });
+            
+            // Add resize listener for responsive grid adjustments – but skip the
+            // spurious resize event some browsers fire on initial page load
+            let resizeTimer;
+            let lastWidth = window.innerWidth;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    // Only run when the viewport width has actually changed
+                    if (window.innerWidth !== lastWidth) {
+                        lastWidth = window.innerWidth;
+                        reorganizeGridWithAnimation();
+                    }
+                }, 250);
+            });
+
+            // Make thumbnails open the modal
+            document.querySelectorAll('.video-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const src = item.getAttribute('data-video');
+                    if (src) {
+                        openVideoModal(src);
+                    }
+                });
+            });
+        });
+        
+        // Enhanced intersection observer for better performance
+        function initializeGridObserver() {
+            const videoItems = document.querySelectorAll('.video-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+            
+            videoItems.forEach(item => {
+                observer.observe(item);
+            });
+        }
+        
+        // Initialize the observer when DOM is ready
+        document.addEventListener('DOMContentLoaded', initializeGridObserver);
+    </script>
+</body>
+</html> 

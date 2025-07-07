@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 export const SocialButtons = () => {
   const handleWhatsApp = () => {
     const phone = "+21658415520";
-    const message = "Hello! I'm interested in your website offer for $50 USD. Can you tell me more?";
+    const message = "Hello! I'm interested in your website offer for $25 USD. Can you tell me more?";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
