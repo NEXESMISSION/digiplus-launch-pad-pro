@@ -1031,6 +1031,26 @@
                     behavior: 'smooth'
                 });
             });
+
+            // List Item Animation for "Is This For You?" section
+            const listItems = document.querySelectorAll('.list-item');
+            const listItemsObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Add staggered delay for each list item
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, index * 100); // 100ms delay between each item
+                        listItemsObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            listItems.forEach(item => {
+                listItemsObserver.observe(item);
+            });
         });
     </script>
 
