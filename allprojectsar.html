@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIGIPLUS - كل المشاريع</title>
+    <title>DIGIPLUS - جميع المشاريع</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -106,100 +106,49 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header matching index.html style -->
-    <header class="relative overflow-hidden text-white">
-        <!-- Background Elements -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://framerusercontent.com/images/GGNg8KoV9Iwu1Z89UqqLzdQWx0.png" alt="background" class="w-full h-full object-cover" onerror="this.style.backgroundColor='#0a0a0a'; this.src='';">
-        </div>
-        <div class="absolute inset-0 z-0">
-            <img src="https://framerusercontent.com/images/I5BmrodulLElK3MtIcR7Z5YD8bI.svg" alt="grid" class="w-full h-full object-cover opacity-50">
-        </div>
-        <div class="absolute inset-0 z-0 overflow-hidden">
-            <div class="absolute top-1/2 left-1/2 w-[150%] h-[150%]">
-                <div class="absolute inset-0 bg-gradient-to-r from-orange-500/50 via-transparent to-transparent opacity-20 blur-3xl animate-[spin_20s_linear_infinite]" style="transform-origin: center center; transform: rotate(-30deg);"></div>
-                <div class="absolute inset-0 bg-gradient-to-l from-purple-500/40 via-transparent to-transparent opacity-15 blur-3xl animate-[spin_22s_linear_infinite]" style="transform-origin: center center; transform: rotate(45deg);"></div>
-            </div>
-        </div>
-        
-        <!-- Gradient overlay to fade to white at the bottom -->
-        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white to-transparent z-5"></div>
-
-        <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto p-4 md:p-8">
-            <!-- Navigation Bar with language flags -->
-            <nav class="flex items-center justify-between">
-                <div class="flex items-center gap-4">
-                    <a href="indexar.html" class="flex items-center">
-                        <span class="text-2xl font-bold">DIGIPLUS</span>
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-6">
+                <div class="flex items-center">
+                    <a href="indexar.html" class="text-2xl font-bold text-gray-900">DIGIPLUS</a>
+                </div>
+                
+                <!-- Language Flags -->
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="language-flag flex items-center justify-center w-8 h-8 rounded-full overflow-hidden border-2 border-gray-300 hover:border-orange-500 transition-all duration-200" title="English">
+                        <img src="https://flagcdn.com/w80/gb.png" alt="English" class="w-full h-full object-cover">
                     </a>
-                    <!-- Language Flags -->
-                    <div class="flex items-center gap-2 ml-4">
-                        <a href="allprojects.html" class="language-flag flex items-center justify-center w-8 h-8 rounded-full overflow-hidden border-2 border-white/30 hover:border-white transition-all duration-200" title="الإنجليزية">
-                            <img src="https://flagcdn.com/w80/gb.png" alt="الإنجليزية" class="w-full h-full object-cover">
-                        </a>
-                        <a href="allprojectsar.html" class="language-flag flex items-center justify-center w-8 h-8 rounded-full overflow-hidden border-2 border-white/30 hover:border-white transition-all duration-200" title="العربية">
-                            <img src="https://flagcdn.com/w80/sa.png" alt="العربية" class="w-full h-full object-cover">
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center gap-8 text-lg">
-                    <a href="indexar.html#work" class="hover:text-orange-500 transition-colors">أعمالنا</a>
-                    <a href="allprojectsar.html" class="hover:text-orange-500 transition-colors">كل المشاريع</a>
-                    <a href="indexar.html#pricing" class="hover:text-orange-500 transition-colors">الأسعار</a>
-                    <a href="https://www.instagram.com/digiplus_xtfp/" target="_blank" class="hover:text-orange-500 transition-colors">تواصل معنا</a>
-                </div>
-                <div class="md:hidden cursor-pointer p-2" id="menu-button">
-                    <div class="w-6 h-full flex flex-col justify-center items-center">
-                        <div class="w-6 h-0.5 bg-white my-1 transition-transform duration-300 bar-1"></div>
-                        <div class="w-6 h-0.5 bg-white my-1 transition-transform duration-300 bar-2"></div>
-                    </div>
-                </div>
-            </nav>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 bg-black/80 backdrop-blur-md rounded-lg p-4">
-                <div class="flex justify-center gap-4 mb-4 pb-4 border-b border-gray-700">
-                    <a href="allprojects.html" class="language-flag flex items-center justify-center w-8 h-8 rounded-full overflow-hidden border-2 border-white/30 hover:border-white transition-all duration-200" title="الإنجليزية">
-                        <img src="https://flagcdn.com/w80/gb.png" alt="الإنجليزية" class="w-full h-full object-cover">
-                    </a>
-                    <a href="allprojectsar.html" class="language-flag flex items-center justify-center w-8 h-8 rounded-full overflow-hidden border-2 border-white/30 hover:border-white transition-all duration-200" title="العربية">
-                        <img src="https://flagcdn.com/w80/sa.png" alt="العربية" class="w-full h-full object-cover">
+                    <a href="indexar.html" class="language-flag active-lang flex items-center justify-center w-8 h-8 rounded-full overflow-hidden border-2 border-orange-500 transition-all duration-200" title="Arabic">
+                        <img src="https://flagcdn.com/w80/sa.png" alt="Arabic" class="w-full h-full object-cover">
                     </a>
                 </div>
-                <a href="indexar.html#work" class="block py-2 text-center hover:text-orange-500 transition-colors">أعمالنا</a>
-                <a href="allprojectsar.html" class="block py-2 text-center hover:text-orange-500 transition-colors">كل المشاريع</a>
-                <a href="indexar.html#pricing" class="block py-2 text-center hover:text-orange-500 transition-colors">الأسعار</a>
-                <a href="https://www.instagram.com/digiplus_xtfp/" target="_blank" class="block py-2 text-center hover:text-orange-500 transition-colors">تواصل معنا</a>
-            </div>
-    
-            <!-- Page Title -->
-            <div class="mt-10 flex flex-col gap-4 items-center text-center pt-10 pb-16">
-                <p class="text-orange-500 font-semibold">محفظتنا</p>
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mt-2">
-                    المشاريع <span class="text-orange-500 font-stylish text-5xl md:text-7xl">المميزة</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mt-4">
-                    استكشف محفظتنا من مواقع تحرير الفيديو وتصميم المنتجات التي أنشأناها للمحترفين المبدعين.
-                </p>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto p-4 md:p-8 text-black">
-        <!-- Project Filters -->
-        <div class="flex flex-wrap justify-center gap-2 md:gap-4 my-8 scroll-reveal">
-            <button class="filter-btn active px-4 py-2 rounded-full border border-gray-200 text-sm md:text-base font-medium hover:bg-orange-500 hover:text-white transition-colors" data-filter="all">كل المشاريع</button>
-            <button class="filter-btn px-4 py-2 rounded-full border border-gray-200 text-sm md:text-base font-medium hover:bg-orange-500 hover:text-white transition-colors" data-filter="video">تحرير الفيديو</button>
-            <button class="filter-btn px-4 py-2 rounded-full border border-gray-200 text-sm md:text-base font-medium hover:bg-orange-500 hover:text-white transition-colors" data-filter="design">تصميم المنتجات</button>
-            <button class="filter-btn px-4 py-2 rounded-full border border-gray-200 text-sm md:text-base font-medium hover:bg-orange-500 hover:text-white transition-colors" data-filter="portfolio">المحفظة</button>
-        </div>
-        
-        <!-- Projects Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 my-8">
-            <!-- Project 1 -->
-            <a href="https://editswithabdullah.digipluslab.xyz/" target="_blank" rel="noopener noreferrer" class="project-card scroll-reveal bg-white rounded-2xl overflow-hidden group flex flex-col shadow-md hover:shadow-xl transition-shadow duration-500 ease-in-out" data-category="video">
-                <div class="card-content w-full h-full flex flex-col bg-white rounded-2xl overflow-hidden">
+    <!-- Main Content -->
+    <main class="py-16 sm:py-24 px-8 sm:px-12 lg:px-16">
+        <div class="container mx-auto">
+            <!-- Page Header -->
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">جميع <span class="text-orange-500 font-stylish text-5xl md:text-6xl">المشاريع</span></h1>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">استكشف مجموعة أعمالنا المتنوعة من المواقع والتطبيقات التي أنشأناها لعملائنا.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active px-6 py-2 rounded-full border border-gray-300 hover:border-orange-500 transition-all duration-300" data-filter="all">الكل</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:border-orange-500 transition-all duration-300" data-filter="portfolio">معارض</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:border-orange-500 transition-all duration-300" data-filter="business">أعمال</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 hover:border-orange-500 transition-all duration-300" data-filter="ecommerce">متاجر</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500" data-category="portfolio">
                     <div class="w-full h-56 image-placeholder">
                         <img 
                             src="https://i.ibb.co/gbJ1VZkm/2025-07-16-224522.png" 
@@ -208,16 +157,21 @@
                             loading="lazy"
                             onerror="this.onerror=null;this.parentElement.style.display='none';">
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-gray-800">Edits with Abdullah</h3>
-                        <p class="text-gray-600 mt-2">محفظة محرر فيديو محترف تعرض أعمالاً عالية الجودة.</p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Edits with Abdullah</h3>
+                        <p class="text-sm text-gray-500 mb-4">معرض محترف لمحرر الفيديو يعرض أعمال عالية الجودة.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">Portfolio</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full">Video Editing</span>
+                        </div>
+                        <a href="https://editswithabdullah.digipluslab.xyz/" target="_blank" class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold">
+                            عرض المشروع →
+                        </a>
                     </div>
                 </div>
-            </a>
-            
-            <!-- Project 2 -->
-            <a href="https://nileshkharat.digipluslab.xyz/" target="_blank" rel="noopener noreferrer" class="project-card scroll-reveal bg-white rounded-2xl overflow-hidden group flex flex-col shadow-md hover:shadow-xl transition-shadow duration-500 ease-in-out" data-category="video">
-                <div class="card-content w-full h-full flex flex-col bg-white rounded-2xl overflow-hidden">
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500" data-category="portfolio">
                     <div class="w-full h-56 image-placeholder">
                         <img 
                             src="https://i.ibb.co/XrjVnb7g/screencapture-nileshkharat-digipluslab-xyz-2025-07-16-22-35-21.png" 
@@ -226,16 +180,21 @@
                             loading="lazy"
                             onerror="this.onerror=null;this.parentElement.style.display='none';">
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-gray-800">Nilesh Kharat</h3>
-                        <p class="text-gray-600 mt-2">محفظة محرر فيديو مبدع مع معرض مشاريع مميز.</p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Nilesh Kharat</h3>
+                        <p class="text-sm text-gray-500 mb-4">معرض إبداعي لمحرر الفيديو مع معارض مشاريع مذهلة.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">Portfolio</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded-full">Creative</span>
+                        </div>
+                        <a href="https://nileshkharat.digipluslab.xyz/" target="_blank" class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold">
+                            عرض المشروع →
+                        </a>
                     </div>
                 </div>
-            </a>
-            
-            <!-- Project 3 -->
-            <a href="https://caseyhunter.digipluslab.xyz/" target="_blank" rel="noopener noreferrer" class="project-card scroll-reveal bg-white rounded-2xl overflow-hidden group flex flex-col shadow-md hover:shadow-xl transition-shadow duration-500 ease-in-out" data-category="design">
-                <div class="card-content w-full h-full flex flex-col bg-white rounded-2xl overflow-hidden">
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500" data-category="portfolio">
                     <div class="w-full h-56 image-placeholder">
                         <img 
                             src="https://i.ibb.co/jNTbHMc/screencapture-caseyhunter-digipluslab-xyz-2025-07-16-22-35-03.png" 
@@ -244,142 +203,73 @@
                             loading="lazy"
                             onerror="this.onerror=null;this.parentElement.style.display='none';">
                     </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-gray-800">Casey Hunter</h3>
-                        <p class="text-gray-600 mt-2">مصمم منتجات مبتكر يصنع حلولاً عصرية.</p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Casey Hunter</h3>
+                        <p class="text-sm text-gray-500 mb-4">مصمم منتجات مبتكر يخلق حلول حديثة.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">Portfolio</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2 py-1 rounded-full">Product Design</span>
+                        </div>
+                        <a href="https://caseyhunter.digipluslab.xyz/" target="_blank" class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold">
+                            عرض المشروع →
+                        </a>
                     </div>
                 </div>
-            </a>
-        </div>
-        
 
-        <!-- Updated CTA Section -->
-        <div class="my-16 text-center scroll-reveal">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">تحتاج موقع <span class="text-orange-500 font-stylish text-4xl md:text-5xl">احترافي</span>؟</h2>
-            <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">سواء كنت محرر فيديو أو مصمم أو محترف مبدع، سنصنع لك محفظة مذهلة تعرض أعمالك.</p>
-            <a href="https://www.instagram.com/digiplus_xtfp/" target="_blank" class="inline-flex items-center justify-center gap-2 bg-orange-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors duration-300 mt-8">
-                ابدأ اليوم →
-            </a>
+                <!-- Add more projects here as needed -->
+                
+            </div>
+
+            <!-- Back to Home Button -->
+            <div class="text-center mt-16">
+                <a href="indexar.html" class="inline-flex items-center justify-center gap-2 bg-orange-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                    العودة للصفحة الرئيسية →
+                </a>
+            </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-8 md:mb-0">
-                    <span class="text-2xl font-bold">DIGIPLUS</span>
-                    <p class="text-gray-400 mt-2">نصنع السحر الرقمي</p>
-                </div>
-                <div class="flex flex-col items-center md:items-end">
-                    <div class="flex gap-4 mb-4">
-                        <a href="https://www.instagram.com/digiplus_xtfp/" target="_blank" class="hover:text-orange-500 transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <p class="text-gray-400 text-sm">© 2023 DIGIPLUS. جميع الحقوق محفوظة.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50 transform scale-90 hover:scale-100">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-        </svg>
-    </button>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile menu toggle
-            const menuButton = document.getElementById('menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            menuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                menuButton.classList.toggle('open');
-            });
-            
-            // Scroll reveal animation
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.15
-            });
-            
-            document.querySelectorAll('.scroll-reveal').forEach(el => {
-                observer.observe(el);
-            });
-            
-            // Project filtering
+            // Filter functionality
             const filterButtons = document.querySelectorAll('.filter-btn');
             const projectCards = document.querySelectorAll('.project-card');
-            
+
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Update active button
+                    // Remove active class from all buttons
                     filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
                     button.classList.add('active');
-                    
+
                     const filter = button.getAttribute('data-filter');
-                    
+
                     projectCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        const category = card.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
                             card.style.display = 'block';
+                            card.style.animation = 'fadeIn 0.5s ease-in-out';
                         } else {
                             card.style.display = 'none';
                         }
                     });
                 });
             });
-            
-            // Scroll to top button
-            const scrollToTopButton = document.getElementById('scrollToTop');
-            
-            const toggleScrollToTopButton = () => {
-                if (window.scrollY > 300) {
-                    scrollToTopButton.style.opacity = '1';
-                    scrollToTopButton.style.pointerEvents = 'auto';
-                } else {
-                    scrollToTopButton.style.opacity = '0';
-                    scrollToTopButton.style.pointerEvents = 'none';
-                }
-            };
-            
-            window.addEventListener('scroll', toggleScrollToTopButton);
-            toggleScrollToTopButton(); // Initial check
-            
-            scrollToTopButton.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Image Loading Script
+
+            // Image loading
             const images = document.querySelectorAll('.project-image');
             images.forEach(img => {
-                // Use .complete to handle cached images instantly
                 if (img.complete) {
                     img.classList.add('loaded');
                 } else {
                     img.addEventListener('load', () => {
                         img.classList.add('loaded');
-                    }, { once: true }); // Use 'once' to ensure the listener is removed after firing
+                    }, { once: true });
                 }
             });
-            
-            // Language flag functionality - removed alert, now using direct links
         });
     </script>
+
 </body>
 </html> 
